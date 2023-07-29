@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dsgkogjj5behg"]
+[gd_scene load_steps=2 format=3 uid="uid://dsgkogjj5behg"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/main_menu_buttons.gd" id="1_grlhw"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -15,3 +17,76 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="bg_panel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.263
+anchor_bottom = 1.0
+offset_right = 0.0239868
+grow_vertical = 2
+color = Color(0.0156863, 0.0156863, 0.0156863, 0.313726)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.194
+anchor_right = 0.212
+anchor_bottom = 0.327
+offset_left = -0.160004
+offset_top = 0.287994
+offset_right = -0.224014
+offset_bottom = 0.103989
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "title"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="buttonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0633681
+anchor_top = 0.364
+anchor_right = 0.22
+anchor_bottom = 0.701
+offset_top = 0.127991
+offset_right = -30.44
+offset_bottom = -117.248
+scale = Vector2(1.2, 1.2)
+alignment = 1
+script = ExtResource("1_grlhw")
+metadata/_edit_use_anchors_ = true
+
+[node name="play" type="Button" parent="buttonContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Label" type="Label" parent="buttonContainer"]
+layout_mode = 2
+
+[node name="credits" type="Button" parent="buttonContainer"]
+layout_mode = 2
+text = "CREDITS
+"
+
+[node name="Label2" type="Label" parent="buttonContainer"]
+layout_mode = 2
+
+[node name="quit" type="Button" parent="buttonContainer"]
+layout_mode = 2
+text = "QUIT
+"
+
+[node name="Label3" type="Label" parent="buttonContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="buttonContainer/play" to="buttonContainer" method="_on_play_pressed"]
+[connection signal="pressed" from="buttonContainer/credits" to="buttonContainer" method="_on_credits_pressed"]
+[connection signal="pressed" from="buttonContainer/quit" to="buttonContainer" method="_on_quit_pressed"]
