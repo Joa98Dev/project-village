@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxlbmcl1mucc3"]
+
+[ext_resource type="PackedScene" uid="uid://bocvfydf5r5o6" path="res://Assets/Models/Wooden_hut/Wooden_hut.gltf" id="1_8wp3v"]
+[ext_resource type="Texture2D" uid="uid://dkiggrkvi62cn" path="res://Assets/Textures/Prototype/texture_08.png" id="1_xwujg"]
+[ext_resource type="PackedScene" uid="uid://cugee84or74j5" path="res://Assets/Prefabs/player.tscn" id="2_rhn6v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uomws"]
+albedo_texture = ExtResource("1_xwujg")
+uv1_triplanar = true
+
+[node name="Test001" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_uomws")
+use_collision = true
+size = Vector3(30, 0.5, 35)
+
+[node name="Player" parent="." instance=ExtResource("2_rhn6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18371, 16.6224)
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.677223, 0.735778, 0, -0.735778, 0.677223, 0, 8.13402, 7.82339)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.199505, 0.979897, 0, -0.979897, 0.199505, 0, 10.0677, 0)
+
+[node name="Wooden_hut" parent="." instance=ExtResource("1_8wp3v")]
+transform = Transform3D(-0.6, 0, -9.05975e-08, 0, 0.6, 0, 9.05975e-08, 0, -0.6, -6, 1.6157, -1.37614)
+
+[node name="Wooden_hut3" parent="." instance=ExtResource("1_8wp3v")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -14.3413, 1.6157, 8.37381)
+
+[node name="Wooden_hut2" parent="." instance=ExtResource("1_8wp3v")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.42994, 1.6157, 1.61879)

@@ -15,6 +15,7 @@ func _on_credits_pressed():
 	print('Loading the credits...')
 
 
-
+#Quit button working!
 func _on_quit_pressed():
-	print('Quitting the game...')
+	get_tree().quit()
+	#print('Quitting the game...')
