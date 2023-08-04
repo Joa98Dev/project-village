@@ -5,7 +5,7 @@ The following document will contain the full documentation of the development of
 ## Sinopsis
 *Hans* lives with his sister *Stella* in a peaceful village called *Leaf Town*, a small village sorrunded by a big forest and a clear lake.
 As always, Stella goes to the forest to collect some items, but suddenly she dissapears.
-Now *Hans* must go deep into forest and find out what happened to his sister.
+Now *Hans* must go deep into the forest and find out what happened to his sister.
 
 ## Characters
 **Hans(player):** a young fisherman who lives with his younger sister, Stella. He's a bit overprotective with his sister, but at the same time, he is someone who's always willing to help others. Acommpained by a sword he goes into the depths of the forest looking for Stella, who have not returned from her daily collection.
@@ -18,11 +18,12 @@ Now *Hans* must go deep into forest and find out what happened to his sister.
 
 ## Software
 * Godot Engine 4.1.1 -> Game engine
-* Blender 3.6 -> 3D
+* Blender 3.6 -> 3D Software
 * GIMP 2.10 -> Image and sprites
 * Inkscape -> Logos and panels
 * Visual Studio Code -> Coding
-* Git -> back up (local)
+* Git -> Back up (local)
+* GitHub -> Back up (remote)
 
 ## Assets
 > Village
@@ -52,7 +53,7 @@ Now *Hans* must go deep into forest and find out what happened to his sister.
 * Sword
 
 # Game
-It'll be a 3D action/adventure game, with low poly graphics and a cartoon style.
+It'll be a 3D action/adventure game with low poly graphics and a cartoon style.
 It will have one level where the player can explore the village and part of the forest.
 
 ### Genre
@@ -80,4 +81,4 @@ It will have one level where the player can explore the village and part of the 
 
 ## Graphics
 * Stylezed 3D low poly
-* Material + Textures
+* Material + Textures + Shaders
