@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://co0vsnld4c6hr"]
+
+[ext_resource type="PackedScene" uid="uid://dtlb1ohdb6pn3" path="res://Assets/Models/Stuck_sword/Stuck_sword.gltf" id="1_nq2qe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oaa8a"]
+albedo_color = Color(0.74902, 0, 0.254902, 1)
+roughness = 0.27
+emission_enabled = true
+emission = Color(0.74902, 0, 0.254902, 1)
+emission_energy_multiplier = 10.0
+ao_light_affect = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fo8oa"]
+albedo_color = Color(0.345098, 0.00392157, 0.258824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vskob"]
+albedo_color = Color(0.964706, 0.717647, 0.301961, 1)
+metallic = 0.5
+metallic_specular = 0.67
+roughness = 0.49
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqbvd"]
+albedo_color = Color(0.843137, 0.843137, 0.843137, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpxe7"]
+albedo_color = Color(0.427451, 0.231373, 0.219608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30v55"]
+albedo_color = Color(0.815686, 0.466667, 0.34902, 1)
+
+[node name="Stuck_sword" instance=ExtResource("1_nq2qe")]
+
+[node name="Gem" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oaa8a")
+
+[node name="Handler" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fo8oa")
+
+[node name="Base" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vskob")
+
+[node name="Blade" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mqbvd")
+
+[node name="tree" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xpxe7")
+surface_material_override/1 = SubResource("StandardMaterial3D_30v55")

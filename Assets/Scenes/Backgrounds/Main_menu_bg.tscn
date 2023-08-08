@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://c37to0i6x8im3"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Backgrounds/Main_menu_anim.gd" id="1_6riwn"]
+[ext_resource type="PackedScene" uid="uid://co0vsnld4c6hr" path="res://Assets/Prefabs/stuck_sword.tscn" id="1_ml7ad"]
+[ext_resource type="PackedScene" uid="uid://dsgkogjj5behg" path="res://Assets/Scenes/Panels/main_menu.tscn" id="2_0g3kt"]
+
+[sub_resource type="Animation" id="Animation_1uswt"]
+resource_name = "round_anim"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uc7lf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cte5c"]
+_data = {
+"RESET": SubResource("Animation_uc7lf"),
+"round_anim": SubResource("Animation_1uswt")
+}
+
+[sub_resource type="Sky" id="Sky_vmcew"]
+
+[sub_resource type="Environment" id="Environment_5uv1l"]
+background_mode = 2
+sky = SubResource("Sky_vmcew")
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_bloom = 0.07
+glow_blend_mode = 1
+fog_light_color = Color(0.964706, 0.717647, 0.301961, 1)
+fog_light_energy = 0.16
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_albedo = Color(0.964706, 0.717647, 0.301961, 1)
+volumetric_fog_sky_affect = 0.6
+
+[node name="Main_menu_bg" type="Node3D"]
+script = ExtResource("1_6riwn")
+
+[node name="Stuck_sword" parent="." instance=ExtResource("1_ml7ad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214188, 3.12866, -1.45231)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuck_sword"]
+libraries = {
+"": SubResource("AnimationLibrary_cte5c")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.34454e-08, 0.110151, -0.993915, 4.81484e-09, 0.993915, 0.110151, 1, 0, -4.37114e-08, -77.7655, 49.9078, -30.3142)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5uv1l")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 43, 0)
+light_color = Color(0.992157, 0.839216, 0.607843, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 5.0
+light_specular = 0.8
+shadow_enabled = true
+omni_range = 36.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 63.2417, 2.63451)
+light_color = Color(0.992157, 0.839216, 0.607843, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 5.0
+light_specular = 0.8
+shadow_enabled = true
+omni_range = 36.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6944, 10.9492, 2.63451)
+light_color = Color(0.992157, 0.839216, 0.607843, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 5.0
+light_specular = 0.8
+shadow_enabled = true
+omni_range = 36.0
+
+[node name="Main_Menu" parent="." instance=ExtResource("2_0g3kt")]
