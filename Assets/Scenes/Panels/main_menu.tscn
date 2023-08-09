@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsgkogjj5behg"]
+[gd_scene load_steps=3 format=3 uid="uid://dsgkogjj5behg"]
 
+[ext_resource type="FontFile" uid="uid://cx8iy2j4cqia0" path="res://Assets/Fonts/BreatheFireIii-PKLOB.ttf" id="1_cokvb"]
 [ext_resource type="Script" path="res://Assets/Scripts/main_menu_buttons.gd" id="1_grlhw"]
 
 [node name="Main_Menu" type="Control"]
@@ -21,6 +22,7 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="bg_panel" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.263
@@ -34,32 +36,34 @@ metadata/_edit_lock_ = true
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.08
-anchor_top = 0.194
-anchor_right = 0.212
-anchor_bottom = 0.327
-offset_left = -0.160004
-offset_top = 0.287994
-offset_right = -0.224014
-offset_bottom = 0.103989
+anchor_left = 0.03
+anchor_top = 0.164
+anchor_right = 0.481
+anchor_bottom = 0.296
+offset_left = 10.44
+offset_top = -0.271996
+offset_right = -10.1121
+offset_bottom = 0.192017
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
+theme_override_fonts/font = ExtResource("1_cokvb")
 theme_override_font_sizes/font_size = 60
-text = "title"
+text = "project    village"
 horizontal_alignment = 1
 uppercase = true
 
 [node name="buttonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0633681
+anchor_left = 0.174
 anchor_top = 0.364
-anchor_right = 0.22
+anchor_right = 0.33
 anchor_bottom = 0.701
+offset_left = -0.448013
 offset_top = 0.127991
-offset_right = -30.44
-offset_bottom = -117.248
+offset_right = -30.16
+offset_bottom = -36.248
 scale = Vector2(1.2, 1.2)
 alignment = 1
 script = ExtResource("1_grlhw")
@@ -67,27 +71,43 @@ metadata/_edit_use_anchors_ = true
 
 [node name="play" type="Button" parent="buttonContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.717647, 0.301961, 1)
+theme_override_fonts/font = ExtResource("1_cokvb")
+toggle_mode = true
 text = "PLAY"
+flat = true
 
 [node name="Label" type="Label" parent="buttonContainer"]
 layout_mode = 2
 
 [node name="credits" type="Button" parent="buttonContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.717647, 0.301961, 1)
+theme_override_fonts/font = ExtResource("1_cokvb")
+toggle_mode = true
 text = "CREDITS
 "
+flat = true
 
 [node name="Label2" type="Label" parent="buttonContainer"]
 layout_mode = 2
 
 [node name="quit" type="Button" parent="buttonContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.717647, 0.301961, 1)
+theme_override_fonts/font = ExtResource("1_cokvb")
+toggle_mode = true
 text = "QUIT
 "
+flat = true
 
 [node name="Label3" type="Label" parent="buttonContainer"]
 layout_mode = 2
 
+[connection signal="mouse_entered" from="buttonContainer/play" to="buttonContainer" method="_on_play_mouse_entered"]
 [connection signal="pressed" from="buttonContainer/play" to="buttonContainer" method="_on_play_pressed"]
 [connection signal="pressed" from="buttonContainer/credits" to="buttonContainer" method="_on_credits_pressed"]
 [connection signal="pressed" from="buttonContainer/quit" to="buttonContainer" method="_on_quit_pressed"]
