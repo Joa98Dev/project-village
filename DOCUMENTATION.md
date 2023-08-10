@@ -82,3 +82,11 @@ It will have one level where the player can explore the village and part of the 
 ## Graphics
 * Stylezed 3D low poly
 * Material + Textures + Shaders
+
+### First material test
+> Sword
+* Glow material
+* Metallic material
+
+> Trunk
+* Albedo material
